@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr  8 18:03:52 2022
+| Date         : Sat Apr  9 17:24:21 2022
 | Host         : DESKTOP-MA229FL running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     4 |
-|    Minimum number of control sets                        |     4 |
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    12 |
+| Unused register locations in slices containing registers |    39 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,14 +39,14 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     4 |
+| Total control sets |    10 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     1 |
+| >= 4 to < 6        |     6 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     0 |
+| >= 14 to < 16      |     1 |
 | >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,25 +58,31 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              86 |           29 |
+| No           | No                    | No                     |             120 |           44 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              26 |           11 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              19 |           10 |
+| Yes          | No                    | No                     |               4 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               4 |            1 |
+| Yes          | Yes                   | No                     |              34 |           15 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------------------+-------------------------+------------------+----------------+--------------+
-|  Clock Signal  |       Enable Signal       |     Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+---------------------------+-------------------------+------------------+----------------+--------------+
-|  clk1hz_BUFG   | WATCH/cur24Cnt[4]_i_1_n_0 | RSTDEBOUNCE/onePulseRst |                1 |              4 |         4.00 |
-|  clk1hz_BUFG   |                           | RSTDEBOUNCE/onePulseRst |               11 |             26 |         2.36 |
-|  clk_IBUF_BUFG |                           |                         |                9 |             40 |         4.44 |
-|  clk1hz_BUFG   |                           |                         |               20 |             46 |         2.30 |
-+----------------+---------------------------+-------------------------+------------------+----------------+--------------+
++----------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
+|  Clock Signal  |            Enable Signal           |       Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
+|  clk1hz_BUFG   | RBOP/E[0]                          | RSTOP/onePulseRst           |                4 |              4 |         1.00 |
+|  clk1hz_BUFG   | WATCH/cur24Cnt[4]_i_1__0_n_0       | RSTOP/onePulseRst           |                1 |              4 |         4.00 |
+|  clk1hz_BUFG   | ALARM/cur24Cnt[4]_i_2_n_0          | ALARM/cur24Cnt[4]_i_1_n_0   |                2 |              4 |         2.00 |
+|  clk1hz_BUFG   | ALARM/estTenMin[3]_i_2_n_0         | ALARM/estTenHour[3]_i_1_n_0 |                2 |              4 |         2.00 |
+|  clk1hz_BUFG   | ALARM/estTenMin[3]_i_2_n_0         | ALARM/nextEstTenMin[3]      |                2 |              4 |         2.00 |
+|  clk1hz_BUFG   | ALARM/estUnitHour[3]_i_1_n_0       |                             |                2 |              4 |         2.00 |
+|  clk1hz_BUFG   | StOpWaTcH/curAccUnitSec[3]_i_1_n_0 | RSTOP/onePulseRst           |                4 |             14 |         3.50 |
+|  clk1hz_BUFG   |                                    | RSTOP/onePulseRst           |               10 |             19 |         1.90 |
+|  clk_IBUF_BUFG |                                    |                             |               11 |             47 |         4.27 |
+|  clk1hz_BUFG   |                                    |                             |               33 |             73 |         2.21 |
++----------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
 
 

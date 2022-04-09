@@ -88,10 +88,12 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/ALU4ibt.v
+  C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/alarm.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/clk.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/debounce.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/onePulse.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/sevenseg.v
+  C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/stopwatch.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/watch.v
   C:/Users/USER/Desktop/junior2/LOGICDESIGNEXP/lab6/lab6_re/lab6_re.srcs/sources_1/new/main.v
 }

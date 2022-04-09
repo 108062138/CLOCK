@@ -66,3 +66,13 @@ set_property PACKAGE_PIN T17 [get_ports rBtn]
 
 set_property IOSTANDARD LVCMOS33 [get_ports lBtn]
 set_property PACKAGE_PIN W19 [get_ports lBtn]
+
+set_property IOSTANDARD LVCMOS33 [get_ports dBtn]
+set_property IOSTANDARD LVCMOS33 [get_ports LShift]
+set_property PACKAGE_PIN U17 [get_ports dBtn]
+set_property PACKAGE_PIN R2 [get_ports LShift]
+
+set_property IOSTANDARD LVCMOS33 [get_ports RhourShift]
+set_property IOSTANDARD LVCMOS33 [get_ports RminShift]
+set_property PACKAGE_PIN V16 [get_ports RhourShift]
+set_property PACKAGE_PIN V17 [get_ports RminShift]
